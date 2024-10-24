@@ -18,6 +18,7 @@ $resultado = mysqli_query($con, $consulta);
 <head>
     <meta charset="UTF-8">
     <title>Solicitudes de Amistad</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 <body>
     <h1>Solicitudes de Amistad</h1>

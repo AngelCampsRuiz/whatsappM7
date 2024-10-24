@@ -59,16 +59,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Login y Registro</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 <body>
-    <h2>Iniciar Sesión</h2>
+    <h1>Iniciar Sesión</h1>
     <form method="POST" action="index.php">
         <input type="text" name="usuario" placeholder="Nombre de usuario" required><br>
         <input type="password" name="contrasena" placeholder="Contraseña" required><br>
         <input type="submit" name="iniciar_sesion" value="Iniciar Sesión">
     </form>
 
-    <h2>Registro</h2>
+    <h1>Registro</h1>
     <form method="POST" action="index.php">
         <input type="text" name="usuario" placeholder="Nombre de usuario" required><br>
         <input type="text" name="nombre_real" placeholder="Nombre real" required><br>

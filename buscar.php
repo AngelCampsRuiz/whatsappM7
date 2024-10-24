@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Buscar Usuarios</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 <body>
     <h1>Buscar Usuarios</h1>
