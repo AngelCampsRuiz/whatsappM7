@@ -1,0 +1,80 @@
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e5ddd5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Cambiado a flex-start para que no esté centrado verticalmente */
+    padding-top: 20px; /* Añadido para que no esté tan pegado al borde superior */
+    flex-direction: column;
+}
+
+/* Botón para volver al inicio */
+.boton-inicio {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #25D366; /* Color estilo WhatsApp */
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.boton-inicio:hover {
+    background-color: #128C7E; /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilo para la lista de resultados */
+.resultado-lista {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Elemento de resultado */
+.resultado-item {
+    margin: 10px 0;
+}
+
+/* Botón de solicitud de amistad */
+.boton-solicitud {
+    background-color: #075e54; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 8px 15px; /* Espaciado interno */
+    cursor: pointer; /* Cambiar el cursor */
+    font-size: 14px; /* Tamaño de fuente */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.boton-solicitud:hover {
+    background-color: #0b8c6a; /* Color más claro al pasar el mouse */
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .resultado-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .boton-solicitud {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .boton-solicitud {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+}

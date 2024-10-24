@@ -18,8 +18,12 @@ $resultado = mysqli_query($con, $consulta);
 <head>
     <meta charset="UTF-8">
     <title>Solicitudes de Amistad</title>
+    <link rel="stylesheet" type="text/css" href="styles/stylessolicitudes.css">
 </head>
 <body>
+    <!-- Botón para volver al inicio -->
+    <a href="inicio.php" class="boton-inicio">←</a>
+
     <h1>Solicitudes de Amistad</h1>
     <ul>
         <?php while ($fila = mysqli_fetch_assoc($resultado)): ?>

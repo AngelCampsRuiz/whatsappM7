@@ -1,0 +1,98 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e5ddd5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #075e54;
+}
+
+/* Contenedor de amigos */
+.amigos-container {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+/* Estilos para la lista */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Botón de chatear */
+.btn-chatear {
+    display: inline-block;
+    background-color: #075e54;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.btn-chatear:hover {
+    background-color: #0b8c6a;
+}
+
+/* Estilos generales del botón de inicio */
+.btn-inicio {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #25D366; /* Color estilo WhatsApp */
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-inicio:hover {
+    background-color: #0b8c6a; /* Color de fondo al pasar el ratón */
+}
+
+
+/* Media Queries para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .amigos-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .btn-chatear {
+        padding: 6px 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .amigos-container {
+        width: 100%;
+    }
+
+    .btn-chatear {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}

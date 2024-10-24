@@ -11,6 +11,19 @@ if (!isset($_SESSION['id_usuario'])) {
 $id_usuario = $_SESSION['id_usuario'];
 $id_amigo = $_GET['id_amigo'];
 
+// Obtener el nombre real del amigo
+$consulta_amigo = "SELECT nombre_real FROM usuarios WHERE id = '$id_amigo'";
+$resultado_amigo = mysqli_query($con, $consulta_amigo);
+$amigo = mysqli_fetch_assoc($resultado_amigo);
+
+// Verificar si el amigo existe
+if (!$amigo) {
+    echo "El usuario no existe.";
+    exit();
+}
+
+$nombre_amigo = $amigo['nombre_real'];
+
 // Si se envía un mensaje
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $mensaje = mysqli_real_escape_string($con, $_POST['mensaje']);
@@ -50,7 +63,8 @@ if (!$resultado_mensajes) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Chat</title>
+    <title>Chat con <?= htmlspecialchars($nombre_amigo) ?></title>
+    <link rel="stylesheet" type="text/css" href="styles/styleschat.css">
     <script>
         // Recargar la página cada 5 segundos para obtener nuevos mensajes
         setInterval(function() {
@@ -59,11 +73,16 @@ if (!$resultado_mensajes) {
     </script>
 </head>
 <body>
-    <h1>Chat con tu amigo</h1>
-    <div>
+    <!-- Botón para volver al inicio -->
+    <a href="inicio.php" class="boton-inicio">←</a>
+
+    <h1>Chat con <?= htmlspecialchars($nombre_amigo) ?></h1>
+    <div class="chat-container">
         <!-- Mostrar los mensajes -->
         <?php while ($fila = mysqli_fetch_assoc($resultado_mensajes)): ?>
-            <p><strong><?= ($fila['id_remitente'] == $id_usuario) ? 'Tú' : 'Amigo' ?>:</strong> <?= $fila['mensaje'] ?></p>
+            <p class="mensaje <?= ($fila['id_remitente'] == $id_usuario) ? 'mensaje-usuario' : 'mensaje-amigo' ?>">
+                <strong><?= ($fila['id_remitente'] == $id_usuario) ? 'Tú' : htmlspecialchars($nombre_amigo) ?>:</strong> <?= htmlspecialchars($fila['mensaje']) ?>
+            </p>
         <?php endwhile; ?>
     </div>
 

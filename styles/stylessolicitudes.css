@@ -1,0 +1,62 @@
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e5ddd5; /* Color de fondo estilo WhatsApp */
+    margin: 0;
+    padding: 20px; /* Espacio alrededor */
+}
+
+/* Encabezado */
+h1 {
+    color: #075e54; /* Color del encabezado */
+    text-align: center; /* Centrar texto */
+    margin-bottom: 20px; /* Espacio debajo del encabezado */
+}
+
+/* Lista de solicitudes */
+ul {
+    list-style-type: none; /* Quitar viñetas */
+    padding: 0; /* Quitar padding */
+}
+
+/* Elemento de solicitud */
+li {
+    background-color: #fff; /* Fondo blanco para cada solicitud */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    margin: 10px 0; /* Espacio entre solicitudes */
+    display: flex; /* Flex para alinear los elementos */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Centrar elementos verticalmente */
+}
+
+/* Enlaces de aceptar y rechazar */
+a {
+    background-color: #25D366; /* Color fondo para enlaces */
+    color: white; /* Color del texto */
+    padding: 8px 12px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Quitar subrayado */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+a:hover {
+    background-color: #128C7E; /* Color más oscuro al pasar el mouse */
+}
+
+/* Media Queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 24px; /* Tamaño del texto del encabezado */
+    }
+
+    li {
+        flex-direction: column; /* Cambiar a columna en móviles */
+        align-items: flex-start; /* Alinear a la izquierda */
+    }
+
+    a {
+        margin-top: 5px; /* Espacio entre los enlaces */
+    }
+}

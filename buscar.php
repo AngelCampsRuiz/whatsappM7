@@ -24,24 +24,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Buscar Usuarios</title>
+    <link rel="stylesheet" type="text/css" href="styles/styleschat.css">
 </head>
 <body>
-    <h1>Buscar Usuarios</h1>
-    <form method="POST" action="buscar.php">
-        <input type="text" name="busqueda" placeholder="Buscar usuario o nombre..." required>
-        <input type="submit" value="Buscar">
-    </form>
+    <!-- Botón para volver al inicio -->
+    <a href="inicio.php" class="boton-inicio">←</a>
 
-    <?php if (isset($resultado)): ?>
+    <h1>Buscar Usuarios</h1>
+    
+    <div class="form-container">
+        <form method="POST" action="buscar.php">
+            <input type="text" name="busqueda" placeholder="Buscar usuario o nombre..." required>
+            <input type="submit" value="Buscar">
+        </form>
+    </div>
+
+    <?php if (isset($resultado) && mysqli_num_rows($resultado) > 0): ?>
         <h2>Resultados de la Búsqueda</h2>
-        <ul>
+        <ul class="resultado-lista">
             <?php while ($fila = mysqli_fetch_assoc($resultado)): ?>
-                <li>
-                    <?= $fila['usuario'] ?> - <?= $fila['nombre_real'] ?>
-                    <a href="enviar_solicitud.php?id=<?= $fila['id'] ?>">Enviar Solicitud de Amistad</a>
+                <li class="resultado-item">
+                    <span class="usuario-info">
+                        <strong><?= htmlspecialchars($fila['usuario']) ?></strong> - <?= htmlspecialchars($fila['nombre_real']) ?>
+                    </span>
+                    <a href="enviar_solicitud.php?id=<?= $fila['id'] ?>" class="enviar-solicitud">
+                        <button class="boton-solicitud">Enviar Solicitud de Amistad</button>
+                    </a>
+
                 </li>
             <?php endwhile; ?>
         </ul>
+    <?php elseif (isset($resultado)): ?>
+        <h2>No se encontraron usuarios.</h2>
     <?php endif; ?>
 </body>
 </html>
