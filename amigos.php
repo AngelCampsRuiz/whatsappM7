@@ -18,22 +18,26 @@ $resultado = mysqli_query($con, $consulta);
 <head>
     <meta charset="UTF-8">
     <title>Lista de Amigos</title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/stylesamigos.css">
 </head>
 <body>
+    <a class="btn-inicio" href="inicio.php">←</a>
     <h1>Lista de Amigos</h1>
-    <ul>
-        <?php while ($fila = mysqli_fetch_assoc($resultado)): ?>
-            <?php
-            $id_amigo = ($fila['id_usuario1'] == $id_usuario) ? $fila['id_usuario2'] : $fila['id_usuario1'];
-            $consulta_amigo = "SELECT usuario FROM usuarios WHERE id='$id_amigo'";
-            $resultado_amigo = mysqli_query($con, $consulta_amigo);
-            $amigo = mysqli_fetch_assoc($resultado_amigo);
-            ?>
-            <li>
-                <?= $amigo['usuario'] ?> <a href="chat.php?id_amigo=<?= $id_amigo ?>">Chatear</a>
-            </li>
-        <?php endwhile; ?>
-    </ul>
+    <div class="amigos-container">
+        <ul>
+            <?php while ($fila = mysqli_fetch_assoc($resultado)): ?>
+                <?php
+                $id_amigo = ($fila['id_usuario1'] == $id_usuario) ? $fila['id_usuario2'] : $fila['id_usuario1'];
+                $consulta_amigo = "SELECT usuario FROM usuarios WHERE id='$id_amigo'";
+                $resultado_amigo = mysqli_query($con, $consulta_amigo);
+                $amigo = mysqli_fetch_assoc($resultado_amigo);
+                ?>
+                <li>
+                    <?= htmlspecialchars($amigo['usuario']) ?> 
+                    <a class="btn-chatear" href="chat.php?id_amigo=<?= $id_amigo ?>">Chatear</a>
+                </li>
+            <?php endwhile; ?>
+        </ul>
+    </div>
 </body>
 </html>

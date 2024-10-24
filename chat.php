@@ -73,6 +73,9 @@ if (!$resultado_mensajes) {
     </script>
 </head>
 <body>
+    <!-- Botón para volver al inicio -->
+    <a href="inicio.php" class="boton-inicio">←</a>
+
     <h1>Chat con <?= htmlspecialchars($nombre_amigo) ?></h1>
     <div class="chat-container">
         <!-- Mostrar los mensajes -->

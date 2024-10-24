@@ -14,7 +14,7 @@ if (!isset($_SESSION['id_usuario'])) {
 <head>
     <meta charset="UTF-8">
     <title>Página Principal</title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/stylesinicio.css">
 </head>
 <body>
     <h1>Bienvenido a Whatsapp Versión Web</h1>

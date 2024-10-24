@@ -11,6 +11,26 @@ body {
     flex-direction: column;
 }
 
+/* Botón para volver al inicio */
+.boton-inicio {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #25D366; /* Color estilo WhatsApp */
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.boton-inicio:hover {
+    background-color: #128C7E; /* Color más oscuro al pasar el mouse */
+}
+
 /* Contenedor del chat */
 .chat-container {
     background-color: #fff;
