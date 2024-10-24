@@ -3,16 +3,10 @@ body {
     font-family: Arial, sans-serif;
     background-color: #e5ddd5;
     margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Cambiado a flex-start para que no esté centrado verticalmente */
-    padding-top: 20px; /* Añadido para que no esté tan pegado al borde superior */
-    flex-direction: column;
+    padding: 20px;
 }
 
-/* Botón para volver al inicio */
-.boton-inicio {
+.btn-inicio {
     position: fixed;
     top: 10px;
     left: 10px;
@@ -27,54 +21,63 @@ body {
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.boton-inicio:hover {
-    background-color: #128C7E; /* Color más oscuro al pasar el mouse */
+.btn-inicio:hover {
+    background-color: #0b8c6a; /* Color de fondo al pasar el ratón */
 }
 
-/* Estilo para la lista de resultados */
+/* Contenedor del formulario de búsqueda */
+.form-container {
+    margin-bottom: 20px;
+}
+
+/* Lista de resultados */
 .resultado-lista {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
-/* Elemento de resultado */
 .resultado-item {
     margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: box-shadow 0.2s;
 }
 
-/* Botón de solicitud de amistad */
+.resultado-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón de enviar solicitud */
 .boton-solicitud {
-    background-color: #075e54; /* Color de fondo */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    padding: 8px 15px; /* Espaciado interno */
-    cursor: pointer; /* Cambiar el cursor */
-    font-size: 14px; /* Tamaño de fuente */
-    transition: background-color 0.3s; /* Transición suave */
+    background-color: #075e54;
+    color: white;
+    border: none;
+    border-radius: 25px; /* Esquinas más redondeadas */
+    padding: 10px 20px; /* Espaciado más grande */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .boton-solicitud:hover {
     background-color: #0b8c6a; /* Color más claro al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación */
 }
 
-/* Media Queries */
-@media screen and (max-width: 768px) {
-    .resultado-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .boton-solicitud {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
+.boton-solicitud:active {
+    transform: translateY(0); /* Restablecer la posición al hacer clic */
 }
 
-@media screen and (max-width: 480px) {
-    .boton-solicitud {
-        font-size: 10px;
-        padding: 4px 8px;
-    }
+/* Mensaje si ya son amigos */
+.amigo-info {
+    color: #888; /* Color gris para indicar que ya son amigos */
 }

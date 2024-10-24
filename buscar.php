@@ -39,8 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" type="text/css" href="styles/styleschat.css">
 </head>
 <body>
-    <!-- Botón para volver al inicio -->
-    <a href="inicio.php" class="boton-inicio">←</a>
+    <a class="btn-inicio" href="inicio.php">←</a>
 
     <h1>Buscar Usuarios</h1>
     
@@ -59,10 +58,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <span class="usuario-info">
                         <strong><?= htmlspecialchars($fila['usuario']) ?></strong> - <?= htmlspecialchars($fila['nombre_real']) ?>
                     </span>
-                    <a href="enviar_solicitud.php?id=<?= $fila['id'] ?>" class="enviar-solicitud">
-                        <button class="boton-solicitud">Enviar Solicitud de Amistad</button>
-                    </a>
-
+                    <?php if (in_array($fila['id'], $amistades)): ?>
+                        <span>(Ya son amigos)</span>
+                    <?php else: ?>
+                        <a href="enviar_solicitud.php?id=<?= $fila['id'] ?>" class="enviar-solicitud">
+                            <button class="boton-solicitud">Enviar Solicitud de Amistad</button>
+                        </a>
+                    <?php endif; ?>
                 </li>
             <?php endwhile; ?>
         </ul>
