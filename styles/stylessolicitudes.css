@@ -31,6 +31,12 @@ li {
     align-items: center; /* Centrar elementos verticalmente */
 }
 
+/* Contenedor de botones */
+.boton-container {
+    display: flex; /* Utiliza flexbox para alinear los botones */
+    gap: 10px; /* Espacio entre los botones */
+}
+
 /* Enlaces de aceptar y rechazar */
 a {
     background-color: #25D366; /* Color fondo para enlaces */
@@ -43,6 +49,10 @@ a {
 
 a:hover {
     background-color: #128C7E; /* Color más oscuro al pasar el mouse */
+}
+
+.boton-rechazar {
+    background-color: red;
 }
 
 /* Media Queries para dispositivos móviles */

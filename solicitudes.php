@@ -35,8 +35,10 @@ $resultado = mysqli_query($con, $consulta);
             ?>
             <li>
                 <?= htmlspecialchars($remitente['usuario']) ?>
-                <a href="aceptar_solicitud.php?id=<?= $fila['id'] ?>">Aceptar</a> |
-                <a href="rechazar_solicitud.php?id=<?= $fila['id'] ?>">Rechazar</a>
+                <div class="boton-container">
+                    <a href="aceptar_solicitud.php?id=<?= $fila['id'] ?>">Aceptar</a> |
+                    <a href="rechazar_solicitud.php?id=<?= $fila['id'] ?>" class="boton-rechazar">Rechazar</a>
+                </div>
             </li>
         <?php endwhile; ?>
     </ul>
