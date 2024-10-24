@@ -31,7 +31,7 @@ $resultado = mysqli_query($con, $consulta);
             $remitente = mysqli_fetch_assoc($resultado_remitente);
             ?>
             <li>
-                <?= $remitente['usuario'] ?>
+                <?= htmlspecialchars($remitente['usuario']) ?>
                 <a href="aceptar_solicitud.php?id=<?= $fila['id'] ?>">Aceptar</a> |
                 <a href="rechazar_solicitud.php?id=<?= $fila['id'] ?>">Rechazar</a>
             </li>
