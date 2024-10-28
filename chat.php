@@ -1,8 +1,7 @@
-​
-​
+
 <?php
 session_start();
-include('db.php');
+include('./paginasInternas/db.php');
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['id_usuario'])) {

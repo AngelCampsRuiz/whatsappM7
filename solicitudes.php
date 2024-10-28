@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('db.php');
+include('./paginasInternas/db.php');
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['id_usuario'])) {
@@ -33,8 +33,8 @@ $resultado = mysqli_query($con, $consulta);
             <li>
                 <?= htmlspecialchars($remitente['usuario']) ?>
                 <div class="boton-container">
-                    <a href="aceptar_solicitud.php?id=<?= $fila['id'] ?>">Aceptar</a> |
-                    <a href="rechazar_solicitud.php?id=<?= $fila['id'] ?>" class="boton-rechazar">Rechazar</a>
+                    <a href="./paginasInternas/aceptar_solicitud.php?id=<?= $fila['id'] ?>">Aceptar</a> |
+                    <a href="./paginasInternas/rechazar_solicitud.php?id=<?= $fila['id'] ?>" class="boton-rechazar">Rechazar</a>
                 </div>
             </li>
         <?php endwhile; ?>

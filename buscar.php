@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('db.php');
+include('./paginasInternas/db.php');
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['id_usuario'])) {
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <?php if (in_array($fila['id'], $amistades)): ?>
                         <span>(Ya son amigos)</span>
                     <?php else: ?>
-                        <a href="enviar_solicitud.php?id=<?= $fila['id'] ?>" class="enviar-solicitud">
+                        <a href="./paginasInternas/enviar_solicitud.php?id=<?= $fila['id'] ?>" class="enviar-solicitud">
                             <button class="boton-solicitud">Enviar Solicitud de Amistad</button>
                         </a>
                     <?php endif; ?>

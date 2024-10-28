@@ -1,10 +1,10 @@
 <?php
 session_start();
-include('db.php');
+include('./paginasInternas/db.php');
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['id_usuario'])) {
-    header("Location: index.php");
+    header("Location: ./index.php");
     exit();
 }
 ?>
@@ -22,7 +22,7 @@ if (!isset($_SESSION['id_usuario'])) {
         <a href="buscar.php">Buscar Usuarios</a><br>
         <a href="solicitudes.php">Solicitudes de Amistad</a><br>
         <a href="amigos.php">Lista de Amigos</a><br>
-        <a href="cerrar_sesion.php">Cerrar Sesión</a>
+        <a href="./paginasInternas/cerrar_sesion.php">Cerrar Sesión</a>
     </nav>
 </body>
 </html>

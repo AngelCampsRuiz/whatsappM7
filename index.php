@@ -1,10 +1,10 @@
 <?php
 session_start();
-include('db.php');
+include('./paginasInternas/db.php');
 
 // Redirigir a la página principal si ya está logueado
 if (isset($_SESSION['id_usuario'])) {
-    header("Location: inicio.php");
+    header("Location: ./inicio.php");
     exit();
 }
 
