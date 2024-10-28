@@ -22,7 +22,8 @@ h1 {
     padding: 20px;
     width: 300px;
     text-align: center;
-    overflow: hidden; /* Para evitar que el contenido sobresalga */
+    max-height: 80vh; /* Asegura el scroll en pantallas pequeñas */
+    overflow-y: auto; /* Muestra scroll vertical */
 }
 
 .auth-container h1 {
@@ -58,27 +59,25 @@ form {
 }
 
 .hidden {
-    max-height: 0;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    display: none;
 }
 
 .visible {
-    max-height: 400px; /* Ajustar según el contenido del formulario */
-    opacity: 1;
-    transition: opacity 0.5s ease;
+    display: block;
 }
 
 .toggle-link {
     margin-top: 20px;
-    color: #075e54; /* Color que coincide con el tema de WhatsApp */
-    text-decoration: underline; /* Subrayar para que parezca un enlace */
-    cursor: pointer; /* Cambiar el cursor para que indique que es clickeable */
-    transition: color 0.3s ease; /* Transición para suavizar el cambio de color */
+    color: #075e54;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
-.toggle-link:hover {
-    color: #25D366; /* Cambiar color al pasar el mouse */
+.error {
+    color: red;
+    font-size: 0.9em;
+    text-align: left;
+    margin-bottom: 10px;
 }
 
 
