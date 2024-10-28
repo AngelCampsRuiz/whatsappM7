@@ -2,7 +2,7 @@ function toggleForms() {
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
 
-    // Alternar visibilidad entre los formularios
+    
     if (loginForm.classList.contains("visible")) {
         loginForm.classList.remove("visible");
         loginForm.classList.add("hidden");
