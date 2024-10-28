@@ -3,7 +3,7 @@
 $host = "localhost";
 $usuario = "root";
 $contrasena = "";
-$nombre_bd = "whatsapp_espanol";
+$nombre_bd = "whatsapp";
 
 // Conexión a la base de datos
 $con = mysqli_connect($host, $usuario, $contrasena, $nombre_bd);

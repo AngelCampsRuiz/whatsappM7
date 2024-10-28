@@ -1,5 +1,5 @@
-CREATE DATABASE whatsapp_espanol;
-USE whatsapp_espanol;
+CREATE DATABASE whatsapp;
+USE whatsapp;
 
 -- Tabla de usuarios
 CREATE TABLE usuarios (
