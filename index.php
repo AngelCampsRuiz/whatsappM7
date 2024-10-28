@@ -56,6 +56,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/auth.css"> 
     <script src="index.js"></script>
+    <style>
+        /* Agregar estilos directamente para simplificar */
+        .hidden {
+            display: none; /* Ocultar completamente el formulario */
+        }
+        .visible {
+            display: block; /* Mostrar el formulario */
+        }
+    </style>
 
 </head>
 <body>

@@ -1,3 +1,5 @@
+​
+​
 <?php
 session_start();
 include('db.php');
@@ -69,7 +71,7 @@ if (!$resultado_mensajes) {
         // Recargar la página cada 5 segundos para obtener nuevos mensajes
         setInterval(function() {
             window.location.reload();
-        }, 5000);
+        }, 15000);
     </script>
 </head>
 <body>
@@ -92,4 +94,3 @@ if (!$resultado_mensajes) {
         <input type="submit" value="Enviar">
     </form>
 </body>
-</html>
