@@ -36,6 +36,6 @@ if (mysqli_num_rows($resultado_amistad) > 0) {
 }
 
 // Redireccionar después de un pequeño retraso para permitir ver el mensaje
-header("Location: buscar.php");
+header("Location: ../buscar.php");
 exit();
 ?>

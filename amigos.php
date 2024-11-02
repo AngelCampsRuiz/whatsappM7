@@ -35,6 +35,8 @@ $resultado = mysqli_query($con, $consulta);
                 <li>
                     <?= htmlspecialchars($amigo['usuario']) ?> 
                     <a class="btn-chatear" href="chat.php?id_amigo=<?= $id_amigo ?>">Chatear</a>
+                    <a class="btn-eliminar" href="./paginasInternas/eliminar.php?id_amigo=<?= $id_amigo ?>">Eliminar</a>
+                    
                 </li>
             <?php endwhile; ?>
         </ul>

@@ -2,7 +2,7 @@
 // Configuración de la base de datos en español
 $host = "localhost";
 $usuario = "root";
-$contrasena = "";
+$contrasena = "Agustin51";
 $nombre_bd = "whatsapp";
 
 // Conexión a la base de datos

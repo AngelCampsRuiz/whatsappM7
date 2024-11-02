@@ -30,5 +30,5 @@ if ($solicitud['id_receptor'] == $_SESSION['id_usuario']) {
     echo "Solicitud aceptada.";
 }
 
-header("Location: solicitudes.php");
+header("Location: ../solicitudes.php");
 ?>

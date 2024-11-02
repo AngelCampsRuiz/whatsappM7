@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('./paginasInternas/db.php');
+include('db.php');
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['id_usuario'])) {
@@ -15,5 +15,5 @@ $consulta_rechazar = "UPDATE solicitudes_amistad SET estado='rechazada' WHERE id
 mysqli_query($con, $consulta_rechazar);
 
 echo "Solicitud rechazada.";
-header("Location: solicitudes.php");
+header("Location: ../solicitudes.php");
 ?>
