@@ -11,6 +11,12 @@ if (!isset($_SESSION['id_usuario'])) {
 $id_usuario = $_SESSION['id_usuario'];
 $consulta = "SELECT * FROM amistades WHERE id_usuario1='$id_usuario' OR id_usuario2='$id_usuario'";
 $resultado = mysqli_query($con, $consulta);
+
+// Verificar si hay amigos
+if (mysqli_num_rows($resultado) == 0) {
+    echo "No tienes amigos.";
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,18 +34,18 @@ $resultado = mysqli_query($con, $consulta);
             <?php while ($fila = mysqli_fetch_assoc($resultado)): ?>
                 <?php
                 $id_amigo = ($fila['id_usuario1'] == $id_usuario) ? $fila['id_usuario2'] : $fila['id_usuario1'];
-                $consulta_amigo = "SELECT usuario FROM usuarios WHERE id='$id_amigo'";
+                $consulta_amigo = "SELECT usuario, nombre_real FROM usuarios WHERE id='$id_amigo'";
                 $resultado_amigo = mysqli_query($con, $consulta_amigo);
                 $amigo = mysqli_fetch_assoc($resultado_amigo);
                 ?>
                 <li>
                     <?= htmlspecialchars($amigo['usuario']) ?> 
                     <a class="btn-chatear" href="chat.php?id_amigo=<?= $id_amigo ?>">Chatear</a>
-                    <a class="btn-eliminar" href="./paginasInternas/eliminar.php?id_amigo=<?= $id_amigo ?>">Eliminar</a>
-                    
+                   
                 </li>
             <?php endwhile; ?>
         </ul>
     </div>
 </body>
 </html>
+
