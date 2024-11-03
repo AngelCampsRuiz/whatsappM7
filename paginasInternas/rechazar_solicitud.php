@@ -10,7 +10,7 @@ if (!isset($_SESSION['id_usuario'])) {
 
 $id_solicitud = $_GET['id'];
 
-// Actualizar el estado de la solicitud a rechazada
+//  estado de la solicitud a rechazada
 $consulta_rechazar = "UPDATE solicitudes_amistad SET estado='rechazada' WHERE id='$id_solicitud'";
 mysqli_query($con, $consulta_rechazar);
 

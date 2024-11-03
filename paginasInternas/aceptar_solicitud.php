@@ -15,6 +15,9 @@ $consulta = "SELECT * FROM solicitudes_amistad WHERE id='$id_solicitud'";
 $resultado = mysqli_query($con, $consulta);
 $solicitud = mysqli_fetch_assoc($resultado);
 
+//Aquí se compara el id_receptor de la solicitud con el id_usuario almacenado en la sesión ($_SESSION['id_usuario']).
+//Si coinciden, significa que el usuario actual es efectivamente el receptor de la solicitud de amistad.
+
 if ($solicitud['id_receptor'] == $_SESSION['id_usuario']) {
     $id_remitente = $solicitud['id_remitente'];
     $id_receptor = $_SESSION['id_usuario'];
