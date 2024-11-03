@@ -41,7 +41,6 @@ if (mysqli_num_rows($resultado) == 0) {
                 <li>
                     <?= htmlspecialchars($amigo['usuario']) ?> 
                     <a class="btn-chatear" href="chat.php?id_amigo=<?= $id_amigo ?>">Chatear</a>
-                   
                 </li>
             <?php endwhile; ?>
         </ul>
