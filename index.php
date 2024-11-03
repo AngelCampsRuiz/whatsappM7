@@ -90,12 +90,11 @@ $desplazarRegistro = !empty(array_filter($errores));
     <link rel="stylesheet" type="text/css" href="styles/auth.css"> 
     <script src="index.js"></script>
     <style>
-        /* Agregar estilos directamente para simplificar */
         .hidden {
-            display: none; /* Ocultar completamente el formulario */
+            display: none; 
         }
         .visible {
-            display: block; /* Mostrar el formulario */
+            display: block; 
         }
     </style>
 
