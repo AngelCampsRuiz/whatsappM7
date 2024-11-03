@@ -8,7 +8,7 @@ if (!isset($_SESSION['id_usuario'])) {
     header("Location: index.php");
     exit();
 }
-
+//recoger el ID del amigo
 $id_usuario = $_SESSION['id_usuario'];
 $id_amigo = $_GET['id_amigo'];
 
@@ -29,7 +29,7 @@ $nombre_amigo = $amigo['nombre_real'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $mensaje = mysqli_real_escape_string($con, $_POST['mensaje']);
     
-    // Verificar que el mensaje no esté vacío
+    // Verificar que el mensaje no esté vacío para insertar mensajes entre el amigo y el usuario actual
     if (!empty($mensaje)) {
         $consulta = "INSERT INTO mensajes (id_remitente, id_receptor, mensaje) 
                      VALUES ('$id_usuario', '$id_amigo', '$mensaje')";
@@ -74,12 +74,13 @@ if (!$resultado_mensajes) {
     </script>
 </head>
 <body>
-    <!-- Botón para volver al inicio -->
+   
     <a href="inicio.php" class="boton-inicio">←</a>
 
     <h1>Chat con <?= htmlspecialchars($nombre_amigo) ?></h1>
     <div class="chat-container">
-        <!-- Mostrar los mensajes -->
+        <!-- Si el mensaje fue enviado por el usuario (id_remitente == $id_usuario), se muestra "Tú:" como remitente.
+       Si el mensaje es del amigo, se muestra su nombre ($nombre_amigo) -->
         <?php while ($fila = mysqli_fetch_assoc($resultado_mensajes)): ?>
             <p class="mensaje <?= ($fila['id_remitente'] == $id_usuario) ? 'mensaje-usuario' : 'mensaje-amigo' ?>">
                 <strong><?= ($fila['id_remitente'] == $id_usuario) ? 'Tú' : htmlspecialchars($nombre_amigo) ?>:</strong> <?= htmlspecialchars($fila['mensaje']) ?>

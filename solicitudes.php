@@ -25,7 +25,9 @@ $resultado = mysqli_query($con, $consulta);
     <a href="inicio.php" class="boton-inicio">←</a>
     <h1>Solicitudes de Amistad</h1>
     <ul>
+        <!--  -->
         <?php while ($fila = mysqli_fetch_assoc($resultado)):
+        //Extrae el ID del remitente (id_remitente) de la solicitud actual,el ID pertenece al usuario que envió la solicitud.
             $id_remitente = $fila['id_remitente'];
             $consulta_remitente = "SELECT usuario FROM usuarios WHERE id='$id_remitente'";
             $remitente = mysqli_fetch_assoc(mysqli_query($con, $consulta_remitente));

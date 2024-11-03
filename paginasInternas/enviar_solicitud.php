@@ -21,7 +21,7 @@ if (mysqli_num_rows($resultado_amistad) > 0) {
     // Verificar si la solicitud ya existe
     $consulta = "SELECT * FROM solicitudes_amistad WHERE id_remitente='$id_remitente' AND id_receptor='$id_receptor'";
     $resultado = mysqli_query($con, $consulta);
-
+  //si la solicitud no existe
     if (mysqli_num_rows($resultado) == 0) {
         // Insertar la solicitud de amistad
         $insertar = "INSERT INTO solicitudes_amistad (id_remitente, id_receptor) VALUES ('$id_remitente', '$id_receptor')";
